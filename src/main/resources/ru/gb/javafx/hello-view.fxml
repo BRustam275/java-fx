@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ru.gb.javafx.HelloController">
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="ru.gb.javafx.ChatController" xmlns:fx="http://javafx.com/fxml">
+    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" prefHeight="500"
+              editable="false" wrapText="true" focusTraversable="false"/>
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="5.0" left="5.0" top="5.0" right="5.0"/>
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <HBox spacing="5.0">
+        <TextField fx:id="textField" promptText="Введите сообщение" HBox.hgrow="ALWAYS" onKeyReleased="#keyPress"/>
+        <Button text="Отправить" HBox.hgrow="ALWAYS" onAction="#clickSend"/>
+        <padding>
+            <Insets top="5.0"/>
+        </padding>
+    </HBox>
 </VBox>
